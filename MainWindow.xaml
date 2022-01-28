@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp10"
         mc:Ignorable="d"
-        Title="Отражение" Height="600" Width="800" Background="BlanchedAlmond">
-    <StackPanel>
+        Title="Отражение" Height="600" Width="1200" Background="BlanchedAlmond">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,33.6,30.4">
         <Border BorderBrush="White" BorderThickness="5"
                 HorizontalAlignment="Right" VerticalAlignment="Center">
          <Image Source="Data/ПАРОВОЗ.jpg" x:Name="myImg" Height="260" Width="400"/>
@@ -18,9 +23,9 @@
             </Border.RenderTransform>
         </Border>
         <!--нижнее изображение-->
-        <Border Height="260" Width="400" HorizontalAlignment="Right" VerticalAlignment="Center" >
+        <Border Height="260" Width="400" HorizontalAlignment="Center" VerticalAlignment="Center" >
             <Border.RenderTransform>
-                <SkewTransform CenterX="-90" CenterY="-10" AngleX="-30" AngleY="20" />
+                <SkewTransform CenterX="-90" CenterY="-2" AngleX="-50" AngleY="20" />
             </Border.RenderTransform>
             
             <Border.Background>
@@ -38,10 +43,47 @@
                 </LinearGradientBrush>
                                      
             </Border.OpacityMask>
-
         </Border>
-        
-        
     </StackPanel>
+        
+        <!--второе изображение-->
+        <StackPanel Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,176.8,-104.6">
+            <Border BorderBrush="White" BorderThickness="5"
+                HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Image Source="Data/Car Game (35).jpg" x:Name="myCar" Height="225" Width="400"/>
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" Direction="40" ShadowDepth="20" Opacity="0.4"/>
+                </Border.Effect>
+                <Border.RenderTransform>
+                    <SkewTransform CenterX="0" CenterY="0" AngleX="0" AngleY="-20" />
+                </Border.RenderTransform>
+            </Border>
+            <!--нижнее изображение-->
+            <Border Height="260" Width="400" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                <Border.RenderTransform>
+                    <SkewTransform CenterX="90" CenterY="-2" AngleX="50" AngleY="-20" />
+                </Border.RenderTransform>
+
+                <Border.Background>
+                    <VisualBrush Visual="{Binding ElementName=myCar}">
+                        <VisualBrush.Transform>
+                            <ScaleTransform ScaleX="1" ScaleY="-1" CenterX="200" CenterY="130"/>
+                        </VisualBrush.Transform>
+                    </VisualBrush>
+
+                </Border.Background>
+                <Border.OpacityMask>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="Black"></GradientStop>
+                        <GradientStop Offset="0.8" Color="Transparent"></GradientStop>
+                    </LinearGradientBrush>
+
+                </Border.OpacityMask>
+            </Border>
+        </StackPanel>
+    </Grid>
+    
+    
+ 
    
 </Window>
