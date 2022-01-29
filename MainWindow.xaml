@@ -8,13 +8,14 @@
         Title="Отражение" Height="600" Width="1200" Background="BlanchedAlmond">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,33.6,30.4">
+        <StackPanel Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,33.6,30.4">
         <Border BorderBrush="White" BorderThickness="5"
                 HorizontalAlignment="Right" VerticalAlignment="Center">
-         <Image Source="Data/ПАРОВОЗ.jpg" x:Name="myImg" Height="260" Width="400"/>
+                <Image Source="Data/Сапсан.jpg" x:Name="myImg" Height="260" Width="400"/>
             <Border.Effect>
                 <DropShadowEffect Color="Black" Direction="40" ShadowDepth="20" Opacity="0.4"/>
             </Border.Effect>
@@ -47,10 +48,10 @@
     </StackPanel>
         
         <!--второе изображение-->
-        <StackPanel Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,176.8,-104.6">
+        <StackPanel Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="-10,0,9.6,-73.6" >
             <Border BorderBrush="White" BorderThickness="5"
                 HorizontalAlignment="Right" VerticalAlignment="Center">
-                <Image Source="Data/Car Game (35).jpg" x:Name="myCar" Height="225" Width="400"/>
+                <Image Source="Data/ПАРОВОЗ.jpg" x:Name="myCar" Height="225" Width="400"/>
                 <Border.Effect>
                     <DropShadowEffect Color="Black" Direction="40" ShadowDepth="20" Opacity="0.4"/>
                 </Border.Effect>
@@ -68,6 +69,44 @@
                     <VisualBrush Visual="{Binding ElementName=myCar}">
                         <VisualBrush.Transform>
                             <ScaleTransform ScaleX="1" ScaleY="-1" CenterX="200" CenterY="130"/>
+                        </VisualBrush.Transform>
+                    </VisualBrush>
+
+                </Border.Background>
+                <Border.OpacityMask>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="Black"></GradientStop>
+                        <GradientStop Offset="0.8" Color="Transparent"></GradientStop>
+                    </LinearGradientBrush>
+
+                </Border.OpacityMask>
+            </Border>
+        </StackPanel>
+
+        <!--третье изображение-->
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="top" >
+            <Border BorderBrush="White" BorderThickness="5"
+                HorizontalAlignment="Right" VerticalAlignment="Center">
+                <TextBlock x:Name="myText" Height="220" Width="300" TextWrapping="Wrap" FontSize="48" FontFamily="Comic Sans MS" FontWeight="Bold" TextAlignment="Center" >
+                    От Паровоза до Cапсана
+                </TextBlock>
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" Direction="40" ShadowDepth="20" Opacity="0.4"/>
+                </Border.Effect>
+                <Border.RenderTransform>
+                    <SkewTransform CenterX="0" CenterY="0" AngleX="0" AngleY="0" />
+                </Border.RenderTransform>
+            </Border>
+            <!--нижнее изображение-->
+            <Border Height="180" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                <Border.RenderTransform>
+                    <SkewTransform CenterX="90" CenterY="-2" AngleX="0" AngleY="0" />
+                </Border.RenderTransform>
+
+                <Border.Background>
+                    <VisualBrush Visual="{Binding ElementName=myText}">
+                        <VisualBrush.Transform>
+                            <ScaleTransform ScaleX="1" ScaleY="-1" CenterX="70" CenterY="90"/>
                         </VisualBrush.Transform>
                     </VisualBrush>
 
