@@ -98,9 +98,6 @@
     <Resource Include="Data\ПАРОВОЗ.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Data\Car Game %2835%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Data\Сапсан.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
